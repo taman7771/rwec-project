@@ -42,7 +42,7 @@ public class EventController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveEventForm(Model model) {
         model.addAttribute("events", EventData.getAll());
-        model.addAttribute("title", "Remove Cheese");
+        model.addAttribute("title", "Remove Event");
         return "event/remove";
     }
 
@@ -52,7 +52,6 @@ public class EventController {
         for (int eventId : eventIds) {
             EventData.remove(eventId);
         }
-
         return "redirect:";
     }
 
