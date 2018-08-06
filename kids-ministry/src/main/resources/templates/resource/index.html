@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body>
+<nav th:replace="fragments :: navigation"></nav>
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+<article>
+    <header>
+        <h1 style="text-align:center"><em>Children Ministry Resources</em></h1>
+        <img th:src="@{/images/Top.jpg}" alt="Top" class="center"/>
+    </header>
+</article>
+            
+
+        <!--<div id="footer">
+                <div id="button">
+                    <p>Send me an <span class="bold">e-mail</span>!</p>
+                </div>
+        </div> -->
+
+<footer>
+                <!--<p>Created by: Samuel T.</p>-->
+    <p>Contact information: <a href="mailto:someone@example.com">
+        tsamtek@yahoo.com</a>.</p>
+    <p>&copy; 2018 All Rights Reserved</p>
+                
+</footer>
+</body>
+</html>
