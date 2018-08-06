@@ -4,9 +4,17 @@
 
 <body class="container">
 
+<nav th:replace="fragments :: navigation"></nav>
+
 <h1 th:text="${title}">Default Title</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
+<ul>
+    <li><a th:href="@{/event}">List</a></li>
+    <li><a th:href="@{/event/add}">Add Event</a></li>
+    <li><a th:href="@{/event/remove}">Remove Event</a></li>
+
+
+</ul>
 
 <p th:unless="${events} and ${events.size()}">no event :(</p>
 

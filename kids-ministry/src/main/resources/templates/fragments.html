@@ -2,18 +2,23 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}">Events</title>
+    <title th:text="${title}">Kids Ministry</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--<link th:href="@{/css/styles.css}" rel="stylesheet" />-->
+
 
 </head>
 <body>
 
 <nav th:fragment="navigation">
-    <a href="/event">List</a> |
-    <a href="/event/add">Add</a> |
-    <a href="/event/remove">Remove</a>
+    <a href="/home"><b>Home</b></a> |
+    <a href="/event"><b>Events</b></a> |
+    <a href="/resources"><b>Resources</b></a> |
+    <a href="/vision"><b>Our Vision</b></a> |
+    <a href="/contacts"><b>Contact Us</b></a>
+
 </nav>
 
 </body>
