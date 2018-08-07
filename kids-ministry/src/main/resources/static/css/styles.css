@@ -40,10 +40,10 @@ h1 {
     padding-left: 80px;
 }
 
-#footer{
+.footer{
 	clear: both;
 	position: relative;
-	bottom: -20px;
+	bottom: -150px;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 	height: 75px;
@@ -64,14 +64,14 @@ h1 {
 #navbar {
     clear: both;
 	position: relative;
-	top:40px;
+	top:100px;
 	left:50%;
 	margin-left:-254px;
 }
 
 img {
 	height: 450px;
-	width: 1000px;
+	width: 450px;
     box-shadow: rgba(0,0,0,0.2) 5px 5px;
 }
 
