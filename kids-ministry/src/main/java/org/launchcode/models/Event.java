@@ -1,32 +1,39 @@
 package org.launchcode.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 /**
  * Created by LaunchCode
  */
+@Entity
 public class Event {
 
+    @Id
+    @GeneratedValue
+    private int id;
+
+    @NotNull
+    @Size(min=3, max=15)
     private String name;
+
+    @NotNull
+    @Size(min=1, message = "Description must not be empty")
     private String description;
-    private int eventId;
-    private static int nextId = 1;
+
 
     public Event(String name, String description) {
-        this();
         this.name = name;
         this.description = description;
     }
 
-    public Event() {
-        eventId = nextId;
-        nextId++;
-    }
+    public Event() { }
 
-    public int getEventId() {
-        return eventId;
-    }
-
-    public void setEventId(int eventId) {
-        this.eventId = eventId;
+    public int getId() {
+        return id;
     }
 
     public String getName() {
