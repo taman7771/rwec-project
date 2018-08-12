@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 
@@ -62,13 +63,13 @@ public class EventController {
         return "event/remove";
     }
 
-    //@RequestMapping(value = "remove", method = RequestMethod.POST)
-    //public String processRemoveEventForm(@RequestParam int[] eventIds) {
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveEventForm(@RequestParam int[] eventIds) {
 
-        //for (int eventId : eventIds) {
-            //eventDao.delete(eventId);
-        //}
-        //return "redirect:";
-    //}
+        for (int eventId : eventIds) {
+            eventDao.deleteById(eventId);
+        }
+        return "redirect:";
+    }
 
 }
