@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 
 import javax.validation.Valid;
@@ -27,7 +28,7 @@ public class UserController {
     private UserDao userDao;
 
 
-    // Request path: /event
+    // Request path: /user
     @RequestMapping(value = "")
     public String index(Model model) {
 
@@ -39,7 +40,7 @@ public class UserController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddUserForm(Model model) {
-        model.addAttribute("title", "Sign Up");
+        model.addAttribute("title", "Add User");
         model.addAttribute(new User());
         return "user/add";
     }
@@ -49,12 +50,13 @@ public class UserController {
                                       Errors errors, Model model) {
 
         if (errors.hasErrors()) {
-            model.addAttribute("title", "Sign Up");
+            model.addAttribute("title", "Add User");
             return "user/add";
         }
 
         userDao.save(newUser);
-        return "home/index";
+        return "user/index";
+
     }
 
 

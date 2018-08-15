@@ -25,7 +25,7 @@ public class User {
     private String email;
 
     @NotNull
-    @Size(min=1, message = "Description must not be empty")
+    @Size(min=3, max=8, message = "Please provide password")
     private String password;
 
 
@@ -51,6 +51,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getPassword() {
