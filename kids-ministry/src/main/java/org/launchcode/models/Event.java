@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 /**
  * Created by LaunchCode
@@ -24,10 +25,16 @@ public class Event {
     @Size(min=1, message = "Description must not be empty")
     private String description;
 
+    @NotNull (message = "Date shouldn't be empty")
+    private Date date;
 
-    public Event(String name, String description) {
+    private String location;
+
+    public Event(String name, String description, Date eventDate, String location) {
         this.name = name;
         this.description = description;
+        this.date = date;
+        this.location = location;
     }
 
     public Event() { }
@@ -50,5 +57,21 @@ public class Event {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 }
