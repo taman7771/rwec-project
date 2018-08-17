@@ -13,7 +13,6 @@
     <li><a th:href="@{/event/add}">Add Event</a></li>
     <li><a th:href="@{/event/remove}">Remove Event</a></li>
 
-
 </ul>
 
 <p th:unless="${events} and ${events.size()}">No event :(</p>
@@ -22,12 +21,16 @@
 <table class="table">
 
     <tr>
-        <th>Name</th>
+        <th>Event</th>
+        <th>Date</th>
+        <th>Location</th>
         <th>Description</th>
     </tr>
 
     <tr th:each="event : ${events}">
         <td th:text="${event.name}"></td>
+        <td th:text="${event.date}"></td>
+        <td th:text="${event.location}"></td>
         <td th:text="${event.description}"></td>
     </tr>
 
