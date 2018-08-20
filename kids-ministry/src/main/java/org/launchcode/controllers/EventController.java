@@ -72,6 +72,25 @@ public class EventController {
         return "redirect:";
     }
 
+    @RequestMapping(value = "volunteer", method = RequestMethod.GET)
+    public String displayVolunteerForm(Model model) {
+        model.addAttribute("title", "Volunteer for Event");
+        return "event/volunteer";
+    }
+
+    @RequestMapping(value = "volunteer", method = RequestMethod.POST)
+    public String processVolunteerForm(@ModelAttribute @Valid Event newEvent,
+                                      Errors errors, Model model) {
+
+        if (errors.hasErrors()) {
+            model.addAttribute("title", "Add Event");
+            return "event/add";
+        }
+
+        eventDao.save(newEvent);
+        return "redirect:";
+    }
+
     @InitBinder
     public void initBinder(final WebDataBinder binder){
         final SimpleDateFormat dateFormat = new SimpleDateFormat("mm/dd/yyyy");
