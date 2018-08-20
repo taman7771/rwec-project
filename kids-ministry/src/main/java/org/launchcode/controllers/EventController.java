@@ -13,10 +13,11 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Optional;
 
 
 /**
- * Created by LaunchCode
+ * Created by Samuel Tekle
  */
 @Controller
 @RequestMapping("event")
@@ -53,8 +54,26 @@ public class EventController {
         }
 
         eventDao.save(newEvent);
-        return "redirect:";
+        return "redirect:" + newEvent.getId();
     }
+
+    @GetMapping(value = "{uid}")
+    public String displayEventDetails(@PathVariable int uid, Model model) {
+
+        model.addAttribute("title", "Event Details");
+
+        Optional<Event> indEvent = eventDao.findById(uid);
+        if (indEvent.isPresent()) {
+            model.addAttribute(indEvent.get());
+        }
+        //} else {
+            //model.addAttribute(MESSAGE_KEY, "danger|No event found with id: " + Integer.toString(uid));
+        //}
+
+        return "event/details";
+
+    }
+
 
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveEventForm(Model model) {
@@ -72,6 +91,17 @@ public class EventController {
         return "redirect:";
     }
 
+    @RequestMapping(value = "register", method = RequestMethod.GET)
+    public String displayRegisterForm(Model model) {
+        model.addAttribute("title", "Register for Event");
+        return "event/register";
+    }
+
+    @RequestMapping(value = "register", method = RequestMethod.POST)
+    public String processRegisterForm(Model model) {
+        return "redirect:";
+    }
+
     @RequestMapping(value = "volunteer", method = RequestMethod.GET)
     public String displayVolunteerForm(Model model) {
         model.addAttribute("title", "Volunteer for Event");
@@ -79,15 +109,7 @@ public class EventController {
     }
 
     @RequestMapping(value = "volunteer", method = RequestMethod.POST)
-    public String processVolunteerForm(@ModelAttribute @Valid Event newEvent,
-                                      Errors errors, Model model) {
-
-        if (errors.hasErrors()) {
-            model.addAttribute("title", "Add Event");
-            return "event/add";
-        }
-
-        eventDao.save(newEvent);
+    public String processVolunteerForm(Model model) {
         return "redirect:";
     }
 

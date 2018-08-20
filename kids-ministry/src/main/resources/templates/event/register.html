@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+
+<h1 th:text="${title}">Default Title</h1>
+
+<!--<form method="post" style="max-width:600px;" th:object="${user}">
+    <div class="form-group">
+        <label th:for="username">Username</label>
+        <input class="form-control" th:field="*{username}" />
+        <span th:errors="*{username}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="email">Email</label>
+        <input class="form-control" th:field="*{email}" />
+        <span th:errors="*{email}" class="error"></span>
+    </div>
+    <div class="form-group">
+        <label th:for="password">Password</label>
+        <input class="form-control" type="password" th:field="*{password}" />
+        <span th:errors="*{password}" class="error"></span>
+    </div>
+
+    <input type="submit" value="Add User" />
+</form>-->
+
+<form method="post" style="max-width:600px;">
+    <div class="form-group">
+        <p><b>Please fill in this form to register for event.</b></p>
+        <hr>
+
+        <label><b>Event Name</b></label>
+        <input class="form-control" type="text" placeholder="Enter Event Name" name="event name" required>
+
+        <label><b>Full Name</b></label>
+        <input class="form-control" type="text" placeholder="Enter Your Full Name" name="full name" required>
+
+        <label><b>Contact Number</b></label>
+        <input class="form-control" type="text" placeholder="Enter Your Contact Number" name="contact number" required>
+
+        <label><b>E-mail</b></label>
+        <input class="form-control" type="text" placeholder="Enter Email" name="email" required>
+        <hr>
+        <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p>
+
+        <button type="submit">Register</button>
+    </div>
+
+</form>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+
+<h1 th:text="${title}">Default Title</h1>
+<div th:if="${indEvent}" class="container-fluid">
+    <h1 th:text="${indEvent.title}"></h1>
+
+    <div class="event-time-loc">
+        <p th:text="${indEvent.name}"></p>
+        <p th:text="${indEvent.date}"></p>
+        <p th:text="${indEvent.location}"></p>
+    </div>
+
+    <p class="event-description" th:text="${indEvent.description}"></p>
+</div>
+
+</body>
+</html>

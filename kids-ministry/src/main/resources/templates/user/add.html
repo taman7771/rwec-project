@@ -6,26 +6,31 @@
 <nav th:replace="fragments :: navigation"></nav>
 <link th:href="@{/css/styles.css}" rel="stylesheet" />
 
-<h1 th:text="${title}">Default Title</h1>
 
 <form method="post" style="max-width:600px;" th:object="${user}">
+    <h1 th:text="${title}">Default Title</h1>
+
+    <p><b>Please fill in this form to create an account.</b></p>
+
     <div class="form-group">
         <label th:for="username">Username</label>
-        <input class="form-control" th:field="*{username}" />
+        <input placeholder="Enter Username" class="form-control" th:field="*{username}" />
         <span th:errors="*{username}" class="error"></span>
     </div>
     <div class="form-group">
         <label th:for="email">Email</label>
-        <input class="form-control" th:field="*{email}" />
+        <input placeholder="Enter Email" class="form-control" th:field="*{email}" />
         <span th:errors="*{email}" class="error"></span>
     </div>
     <div class="form-group">
         <label th:for="password">Password</label>
-        <input class="form-control" type="password" th:field="*{password}" />
+        <input placeholder="Enter Password" class="form-control" type="password" th:field="*{password}" />
         <span th:errors="*{password}" class="error"></span>
     </div>
 
     <input type="submit" value="Add User" />
+    <p>Already have an account? <a href="#">Log In</a>.</p>
+
 </form>
 
 </body>
