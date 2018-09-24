@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+<body class="container">
+
+<nav th:replace="fragments :: navigation"></nav>
+<link th:href="@{/css/styles.css}" rel="stylesheet" />
+
+<h1 th:text="${title}">Default Title</h1>
+<form>
+    <div>
+        <table class="inputs_table">
+            <tbody>
+            <tr>
+                <td><b>Event Name:</b></td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td><b>Full Name:</b></td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td><b>Contact Number:</b></td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td><b>E-mail:</b></td>
+                <td>
+                    <input type="text">
+                </td>
+            </tr>
+            <tr>
+                <td><b>What time can you work?</b></td>
+                <td>
+                    <input type="radio" value="true">
+                    <label>Anytime</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" value="true">
+                    <label>9-12</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" value="true">
+                    <label>1-5</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" value="true">
+                    <label>The whole evening</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="radio" value="true">
+                    <label>Other</label>
+                </td>
+            </tr>
+            <tr>
+                <td><b>Interested in:</b></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Where ever needed</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Games</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Bringing Food</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Teaching</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Security</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Organizing</label>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="checkbox" value="true">
+                    <label>Others</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Comments:</td>
+                <td>
+                    <textarea rows="3" cols="30">Enter text here...</textarea>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <input type="button" value="Submit Form">
+
+    </div>
+</form>
+
+</body>
+</html>

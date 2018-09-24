@@ -55,7 +55,7 @@ public class UserController {
         }
 
         userDao.save(newUser);
-        return "user/index";
+        return "home/index";
 
     }
 
